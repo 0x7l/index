@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker Page</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: "Courier New", Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 0.2em 0;
+    }
+  </style>
+  <script>
+    // When the page loads, prompt the user for the secret code
+    window.onload = function() {
+      var secret = prompt("Enter the secret code to enter my world of hacking:");
+      
+      // Change "h4ck3r" to your desired secret code
+      if (secret !== "0x7l") {
+        alert("Access Denied! You are not allowed to enter my world of hacking.");
+        // Optionally, redirect or blank out the page if access is denied
+        document.body.innerHTML = "<h1>Access Denied</h1>";
+      } else {
+        alert("Welcome to the world of hacking!");
+      }
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, Hacker!</h1>
+    <p>You have entered the hacker's den.</p>
+    <p>Access Granted...</p>
+  </div>
+</body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hacker Resume</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    h1,
+    h2 {
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      font-size: 2em;
+      margin-top: 1.5em;
+    }
+    p,
+    li {
+      line-height: 1.6;
+    }
+    ul {
+      list-style-type: square;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var password = prompt("Enter the secret password to view the Hacker Resume:");
+      // Change "hackermaster" to your desired secret password.
+      if (password !== "hackermaster") {
+        alert("Access Denied! Incorrect password.");
+        document.body.innerHTML = "<h1>Access Denied</h1>";
+      } else {
+        alert("Access Granted. Welcome to the Hacker Resume!");
+        // The resume content is already in the HTML below.
+      }
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Hacker Resume</h1>
+    <p><strong>Name:</strong> John "Hackerman" Doe</p>
+    <p><strong>Email:</strong> hackerman@example.com</p>
+    <p><strong>Location:</strong> Darknet, Internet</p>
+
+    <div class="section">
+      <h2>Profile</h2>
+      <p>
+        An elite hacker with extensive experience in cybersecurity,
+        penetration testing, and vulnerability research. Adept in multiple
+        programming languages and always on the hunt for the next big challenge
+        in the digital realm.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <ul>
+        <li>Ethical Hacking & Penetration Testing</li>
+        <li>Network Security & Vulnerability Assessment</li>
+        <li>Programming: Python, JavaScript, C, C++</li>
+        <li>Exploitation & Reverse Engineering</li>
+        <li>Linux/Unix Systems</li>
+        <li>Cryptography & Steganography</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+      <p><strong>Cyber Security Consultant</strong> | Freelance | 2018 - Present</p>
+      <p>
+        Performed security audits, vulnerability assessments, and penetration
+        tests for various organizations, ensuring robust defenses against
+        external threats.
+      </p>
+      <p><strong>Lead Penetration Tester</strong> | CyberSec Labs | 2015 - 2018</p>
+      <p>
+        Led a team of ethical hackers to simulate advanced cyber attacks and
+        fortify enterprise networks. Developed custom tools to uncover
+        vulnerabilities.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <p>
+        <strong>DarkWeb Scanner:</strong> Developed an automated tool to scan and
+        monitor dark web forums for leaked data and potential threats.
+      </p>
+      <p>
+        <strong>Vulnerability Analyzer:</strong> Created a comprehensive platform
+        that integrates multiple vulnerability scanners for real-time threat
+        analysis.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <p>
+        <strong>Master's in Cyber Security</strong> | University of Cyberspace |
+        2013 - 2015
+      </p>
+      <p>
+        <strong>Bachelor's in Computer Science</strong> | Tech Institute | 2009 -
+        2013
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Certifications</h2>
+      <p>
+        CEH (Certified Ethical Hacker), OSCP (Offensive Security Certified
+        Professional), CISSP (Certified Information Systems Security
+        Professional)
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Interests</h2>
+      <p>
+        Digital privacy, cybersecurity research, open-source intelligence
+        (OSINT), and exploring cutting-edge techniques in digital forensics and
+        cyber law.
+      </p>
+    </div>
+  </div>
+</body>
+</html> -->
