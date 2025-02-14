@@ -1,13 +1,14 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hacker Page - 0x7l</title>
+  <title>💀 Hacker Page - 0x7l 🕶️</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
     body {
-      background: #000000; /* Pure Black Background */
+      background: #000;
       color: #0f0;
       font-family: "Courier New", Courier, monospace;
       display: flex;
@@ -25,13 +26,16 @@
       text-transform: uppercase;
       color: #00ff00;
       text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+      animation: glow 1.5s infinite alternate;
     }
 
-    p {
-      font-size: 1.4em;
-      margin: 10px 0;
-      color: #00ff00;
-      text-shadow: 0 0 8px #00ff00;
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+      }
+      to {
+        text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+      }
     }
 
     .shloka {
@@ -68,17 +72,60 @@
       box-shadow: 0 0 15px cyan, 0 0 30px #00ffff;
     }
 
+    /* Animated Hacker Emoji */
+    .hacker-emoji {
+      font-size: 3em;
+      margin-top: 20px;
+      font-weight: bold;
+      text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+      animation: hacker-glitch 1.5s infinite alternate;
+    }
+
+    /* Glitch Effect */
+    @keyframes hacker-glitch {
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-3px);
+      }
+      50% {
+        transform: translateX(3px);
+      }
+      75% {
+        transform: translateX(-1px);
+      }
+      100% {
+        transform: translateX(1px);
+      }
+    }
+
+    /* ASCII Hacker Face */
+    .hacker-face {
+      font-size: 14px;
+      font-family: "Courier New", Courier, monospace;
+      color: lime;
+      white-space: pre;
+      text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+      animation: hacker-fade 2s infinite alternate;
+    }
+
+    @keyframes hacker-fade {
+      from { opacity: 0.7; }
+      to { opacity: 1; }
+    }
+
   </style>
 
   <script>
     window.onload = function() {
-      var secret = prompt("Enter the secret code to enter my world of hacking:", "0x7l");
+      var secret = prompt("🔒 Enter the secret code to enter my world of hacking:", "0x7l");
       
       if (secret !== "0x7l") {
-        alert("Access Denied! You are not allowed to enter my world of hacking.");
-        document.body.innerHTML = "<h1>Access Denied</h1>";
+        alert("🚫 Access Denied! You are not allowed to enter my world of hacking.");
+        document.body.innerHTML = "<h1>❌ Access Denied ❌</h1>";
       } else {
-        alert("Welcome to the world of hacking, 0x7l!");
+        alert("🔥 Welcome to the world of hacking, 0x7l! 🕶️💀");
       }
     };
 
@@ -88,11 +135,28 @@
   </script>
 </head>
 <body>
-  <h1>Welcome, Hacker!</h1>
-  <p class="shloka">यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br>
-      अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥</p>
-  <p><strong>You have entered the hacker's den.</strong></p>
-  <p><strong>Access Granted...</strong></p>
-  <button class="cv-button" onclick="goToCV()">View My CV</button>
+  <h1>👨‍💻 Welcome, Hacker! 🕶️</h1>
+  <p class="shloka">📜 यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br>
+      अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥ 📜</p>
+  <p><strong>💻 You have entered the hacker's den. 💀</strong></p>
+  <p><strong>✅ Access Granted... ✅</strong></p>
+
+  <button class="cv-button" onclick="goToCV()">📄 View My CV 📄</button>
+
+  <!-- Animated Hacker Emoji -->
+  <p class="hacker-emoji">☠️💀🕶️</p>
+
+  <!-- Animated ASCII Hacker Face -->
+  <pre class="hacker-face">
+        ⠀⠀⠀⢀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⣴⠟⠉⠀⠀⠀⠈⠙⢦⠀⠀⠀⠀⠀⠀⠀
+        ⠀⣼⠃⠀⠀⢀⡀⠀⠀⠀⠘⣇⠀⠀⠀⠀⠀⠀
+        ⢰⡇⠀⠀⠀⠛⠛⠀⠀⠀⢀⡟⠀⠀⠀⠀⠀⠀
+        ⢸⡇⠀⠀⠀⠀⣠⡀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀
+        ⠘⣇⠀⠀⠀⠻⠿⠟⠀⠀⣸⠃⠀⠀⠀⠀⠀⠀
+        ⠀⠻⣦⡀⠀⠀⠀⠀⢀⣴⠟⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠈⠙⠲⠶⠖⠚⠉⠀⠀⠀⠀⠀⠀⠀⠀
+  </pre>
+
 </body>
 </html>
