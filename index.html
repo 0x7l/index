@@ -1,12 +1,13 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hacker Page</title>
+  <title>Hacker Page - 0x7l</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
     body {
-      background-color: #000;
+      background: radial-gradient(circle, #002200, #000000);
       color: #0f0;
       font-family: "Courier New", Courier, monospace;
       display: flex;
@@ -15,183 +16,113 @@
       min-height: 100vh;
       margin: 0;
       text-align: center;
+      flex-direction: column;
+      padding: 20px;
     }
+
     h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
+      font-size: 3.2em;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px #0f0, 0 0 40px #00ff00;
+      animation: glowGreen 1.5s infinite alternate;
     }
+
     p {
       font-size: 1.2em;
       margin: 0.2em 0;
+      text-shadow: 0 0 5px #0f0;
+    }
+
+    .shloka {
+      font-family: "Noto Sans Devanagari", sans-serif;
+      font-size: 1.8em;
+      color: red;
+      font-weight: bold;
+      margin-bottom: 1.5em;
+      text-shadow: 0 0 15px red, 0 0 30px #ff4d4d;
+      animation: glowRed 1.5s infinite alternate;
+      background: rgba(255, 0, 0, 0.1);
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .alias {
+      font-family: "Orbitron", sans-serif;
+      font-size: 2em;
+      color: cyan;
+      margin-top: 20px;
+      text-shadow: 0 0 15px cyan, 0 0 30px #00ffff;
+      animation: hackerGlow 1.5s infinite alternate;
+      padding: 10px 20px;
+      border: 2px solid cyan;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .cv-button {
+      font-size: 1.2em;
+      color: black;
+      background-color: #0f0;
+      border: 2px solid #0f0;
+      padding: 12px 25px;
+      margin-top: 25px;
+      cursor: pointer;
+      border-radius: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s ease-in-out;
+      text-shadow: 0 0 10px black;
+      animation: glowGreen 1.5s infinite alternate;
+      box-shadow: 0 0 15px #0f0, 0 0 30px #00ff00;
+    }
+
+    .cv-button:hover {
+      background-color: #0c0;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #0f0, 0 0 40px #00ff00;
+    }
+
+    @keyframes glowGreen {
+      from { text-shadow: 0 0 10px #0f0, 0 0 20px #0f0; }
+      to { text-shadow: 0 0 20px #0f0, 0 0 30px #00ff00; }
+    }
+
+    @keyframes glowRed {
+      from { text-shadow: 0 0 15px red, 0 0 30px #ff4d4d; }
+      to { text-shadow: 0 0 25px red, 0 0 40px #ff1a1a; }
+    }
+
+    @keyframes hackerGlow {
+      from { text-shadow: 0 0 15px cyan, 0 0 30px #00ffff; }
+      to { text-shadow: 0 0 25px cyan, 0 0 40px #00ffff; }
     }
   </style>
+
   <script>
-    // When the page loads, prompt the user for the secret code
     window.onload = function() {
-      var secret = prompt("Enter the secret code to enter my world of hacking:");
+      var secret = prompt("Enter the secret code to enter my world of hacking:", "0x7l");
       
-      // Change "h4ck3r" to your desired secret code
       if (secret !== "0x7l") {
         alert("Access Denied! You are not allowed to enter my world of hacking.");
-        // Optionally, redirect or blank out the page if access is denied
         document.body.innerHTML = "<h1>Access Denied</h1>";
       } else {
-        alert("Welcome to the world of hacking!");
+        alert("Welcome to the world of hacking, 0x7l!");
       }
     };
+
+    function goToCV() {
+      window.location.href = "resume.html"; // CV page ka link yaha dalna
+    }
   </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome, Hacker!</h1>
-    <p>You have entered the hacker's den.</p>
-    <p>Access Granted...</p>
-  </div>
+  <h1>Welcome, Hacker!</h1>
+  <p class="shloka">यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br>
+      अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥</p>
+  <p>You have entered the hacker's den.</p>
+  <p>Access Granted...</p>
+  <p class="alias">Alias: 0x7l</p>
+  <button class="cv-button" onclick="goToCV()">View My CV</button>
 </body>
 </html>
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hacker Resume</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #0f0;
-      font-family: "Courier New", Courier, monospace;
-      margin: 0;
-      padding: 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-    }
-    h1,
-    h2 {
-      text-align: center;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-    }
-    h2 {
-      font-size: 2em;
-      margin-top: 1.5em;
-    }
-    p,
-    li {
-      line-height: 1.6;
-    }
-    ul {
-      list-style-type: square;
-    }
-    .section {
-      margin-bottom: 20px;
-    }
-  </style>
-  <script>
-    window.onload = function () {
-      var password = prompt("Enter the secret password to view the Hacker Resume:");
-      // Change "hackermaster" to your desired secret password.
-      if (password !== "hackermaster") {
-        alert("Access Denied! Incorrect password.");
-        document.body.innerHTML = "<h1>Access Denied</h1>";
-      } else {
-        alert("Access Granted. Welcome to the Hacker Resume!");
-        // The resume content is already in the HTML below.
-      }
-    };
-  </script>
-</head>
-<body>
-  <div class="container">
-    <h1>Hacker Resume</h1>
-    <p><strong>Name:</strong> John "Hackerman" Doe</p>
-    <p><strong>Email:</strong> hackerman@example.com</p>
-    <p><strong>Location:</strong> Darknet, Internet</p>
-
-    <div class="section">
-      <h2>Profile</h2>
-      <p>
-        An elite hacker with extensive experience in cybersecurity,
-        penetration testing, and vulnerability research. Adept in multiple
-        programming languages and always on the hunt for the next big challenge
-        in the digital realm.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li>Ethical Hacking & Penetration Testing</li>
-        <li>Network Security & Vulnerability Assessment</li>
-        <li>Programming: Python, JavaScript, C, C++</li>
-        <li>Exploitation & Reverse Engineering</li>
-        <li>Linux/Unix Systems</li>
-        <li>Cryptography & Steganography</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Experience</h2>
-      <p><strong>Cyber Security Consultant</strong> | Freelance | 2018 - Present</p>
-      <p>
-        Performed security audits, vulnerability assessments, and penetration
-        tests for various organizations, ensuring robust defenses against
-        external threats.
-      </p>
-      <p><strong>Lead Penetration Tester</strong> | CyberSec Labs | 2015 - 2018</p>
-      <p>
-        Led a team of ethical hackers to simulate advanced cyber attacks and
-        fortify enterprise networks. Developed custom tools to uncover
-        vulnerabilities.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Projects</h2>
-      <p>
-        <strong>DarkWeb Scanner:</strong> Developed an automated tool to scan and
-        monitor dark web forums for leaked data and potential threats.
-      </p>
-      <p>
-        <strong>Vulnerability Analyzer:</strong> Created a comprehensive platform
-        that integrates multiple vulnerability scanners for real-time threat
-        analysis.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Education</h2>
-      <p>
-        <strong>Master's in Cyber Security</strong> | University of Cyberspace |
-        2013 - 2015
-      </p>
-      <p>
-        <strong>Bachelor's in Computer Science</strong> | Tech Institute | 2009 -
-        2013
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Certifications</h2>
-      <p>
-        CEH (Certified Ethical Hacker), OSCP (Offensive Security Certified
-        Professional), CISSP (Certified Information Systems Security
-        Professional)
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Interests</h2>
-      <p>
-        Digital privacy, cybersecurity research, open-source intelligence
-        (OSINT), and exploring cutting-edge techniques in digital forensics and
-        cyber law.
-      </p>
-    </div>
-  </div>
-</body>
-</html> -->
