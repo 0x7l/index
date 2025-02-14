@@ -2,8 +2,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hacker Page</title>
+  <title>Hacker Page - 0x7l</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+    
     body {
       background-color: #000;
       color: #0f0;
@@ -15,22 +17,56 @@
       margin: 0;
       text-align: center;
       flex-direction: column;
+      overflow: hidden;
     }
+
     h1 {
       font-size: 3em;
-      margin-bottom: 0.5em;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px #0f0, 0 0 40px #0f0;
+      animation: glow 1.5s infinite alternate;
     }
+
     p {
       font-size: 1.2em;
       margin: 0.2em 0;
+      text-shadow: 0 0 5px #0f0;
     }
+
     .shloka {
       font-family: "Noto Sans Devanagari", sans-serif;
       font-size: 1.5em;
-      color: #ff9933; /* Saffron color */
+      color: #ff0000; /* Red color */
       margin-top: 20px;
-      text-shadow: 0 0 10px #ff9933, 0 0 20px #ff6600;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4d4d;
+      font-weight: bold;
+      animation: glowRed 1.5s infinite alternate;
     }
+
+    .alias {
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.5em;
+      color: cyan;
+      margin-top: 15px;
+      text-shadow: 0 0 10px cyan, 0 0 20px #00ffff;
+      animation: hackerGlow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #0f0, 0 0 20px #0f0; }
+      to { text-shadow: 0 0 20px #0f0, 0 0 30px #00ff00; }
+    }
+
+    @keyframes glowRed {
+      from { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4d4d; }
+      to { text-shadow: 0 0 20px #ff0000, 0 0 30px #ff1a1a; }
+    }
+
+    @keyframes hackerGlow {
+      from { text-shadow: 0 0 10px cyan, 0 0 20px #00ffff; }
+      to { text-shadow: 0 0 20px cyan, 0 0 30px #00ffff; }
+    }
+
   </style>
   <script>
     window.onload = function() {
@@ -40,7 +76,7 @@
         alert("Access Denied! You are not allowed to enter my world of hacking.");
         document.body.innerHTML = "<h1>Access Denied</h1>";
       } else {
-        alert("Welcome to the world of hacking!");
+        alert("Welcome to the world of hacking, 0x7l!");
       }
     };
   </script>
@@ -50,6 +86,7 @@
     <h1>Welcome, Hacker!</h1>
     <p>You have entered the hacker's den.</p>
     <p>Access Granted...</p>
+    <p class="alias">Alias: 0x7l</p>
     <p class="shloka">यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br>
       अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥</p>
   </div>
