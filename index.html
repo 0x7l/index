@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hacker Page - 0x7l</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
     
     body {
       background-color: #000;
@@ -17,57 +17,52 @@
       margin: 0;
       text-align: center;
       flex-direction: column;
-      overflow: hidden;
     }
 
     h1 {
       font-size: 3em;
       text-transform: uppercase;
-      text-shadow: 0 0 20px #0f0, 0 0 40px #0f0;
-      animation: glow 1.5s infinite alternate;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin: 0.2em 0;
-      text-shadow: 0 0 5px #0f0;
+      margin-bottom: 0.5em;
     }
 
     .shloka {
       font-family: "Noto Sans Devanagari", sans-serif;
       font-size: 1.5em;
-      color: #ff0000; /* Red color */
-      margin-top: 20px;
-      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4d4d;
+      color: red; /* Red color */
       font-weight: bold;
-      animation: glowRed 1.5s infinite alternate;
+      margin-bottom: 1em;
     }
 
     .alias {
       font-family: "Orbitron", sans-serif;
-      font-size: 1.5em;
-      color: cyan;
+      font-size: 1.8em;
+      color: #0f0;
       margin-top: 15px;
-      text-shadow: 0 0 10px cyan, 0 0 20px #00ffff;
-      animation: hackerGlow 1.5s infinite alternate;
+      border: 2px solid #0f0;
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 8px;
     }
 
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #0f0, 0 0 20px #0f0; }
-      to { text-shadow: 0 0 20px #0f0, 0 0 30px #00ff00; }
+    .cv-button {
+      font-size: 1.2em;
+      color: #000;
+      background-color: #0f0;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
     }
 
-    @keyframes glowRed {
-      from { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4d4d; }
-      to { text-shadow: 0 0 20px #ff0000, 0 0 30px #ff1a1a; }
+    .cv-button:hover {
+      background-color: #0c0;
+      transform: scale(1.05);
     }
-
-    @keyframes hackerGlow {
-      from { text-shadow: 0 0 10px cyan, 0 0 20px #00ffff; }
-      to { text-shadow: 0 0 20px cyan, 0 0 30px #00ffff; }
-    }
-
   </style>
+
   <script>
     window.onload = function() {
       var secret = prompt("Enter the secret code to enter my world of hacking:", "0x7l");
@@ -79,16 +74,19 @@
         alert("Welcome to the world of hacking, 0x7l!");
       }
     };
+
+    function goToCV() {
+      window.location.href = "resume.html"; // CV ke page ka link yaha add karein
+    }
   </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome, Hacker!</h1>
-    <p>You have entered the hacker's den.</p>
-    <p>Access Granted...</p>
-    <p class="alias">Alias: 0x7l</p>
-    <p class="shloka">यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br>
+  <h1>Welcome, Hacker!</h1>
+  <p class="shloka">यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br>
       अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥</p>
-  </div>
+  <p>You have entered the hacker's den.</p>
+  <p>Access Granted...</p>
+  <p class="alias">Alias: 0x7l</p>
+  <button class="cv-button" onclick="goToCV()">View My CV</button>
 </body>
 </html>
