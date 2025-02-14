@@ -3,50 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>0x7l - Penetration Tester Resume</title>
+  <title>Hacker Page - 0x7l</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
     body {
-      background: #000;
-      color: #00ff00;
+      background: #000000;
+      color: #0f0;
       font-family: "Courier New", Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
       text-align: center;
+      flex-direction: column;
       padding: 20px;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 3.2em;
       text-transform: uppercase;
+      color: #00ff00;
       text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
     }
 
-    .section {
-      background: rgba(0, 255, 0, 0.1);
-      border: 1px solid #00ff00;
-      padding: 20px;
-      margin: 20px auto;
-      width: 80%;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #00ff00;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      font-size: 1.2em;
+    p {
+      font-size: 1.4em;
       margin: 10px 0;
+      color: #00ff00;
+      text-shadow: 0 0 8px #00ff00;
     }
 
-    .resume-button {
+    .shloka {
+      font-family: "Noto Sans Devanagari", sans-serif;
+      font-size: 1.8em;
+      color: red;
+      font-weight: bold;
+      margin-bottom: 1.5em;
+      text-shadow: 0 0 10px red, 0 0 20px #ff4d4d;
+      background: rgba(255, 0, 0, 0.1);
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .cv-button {
       font-family: "Orbitron", sans-serif;
       font-size: 1.5em;
       color: cyan;
       text-transform: uppercase;
       margin-top: 20px;
+      text-shadow: 0 0 10px cyan, 0 0 20px #00ffff;
       padding: 15px 30px;
       border: 2px solid cyan;
       border-radius: 10px;
@@ -55,7 +73,7 @@
       transition: all 0.3s ease-in-out;
     }
 
-    .resume-button:hover {
+    .cv-button:hover {
       background-color: rgba(0, 255, 255, 0.1);
       transform: scale(1.1);
       box-shadow: 0 0 15px cyan, 0 0 30px #00ffff;
@@ -63,35 +81,50 @@
   </style>
 </head>
 <body>
-  <h1>👨‍💻 0x7l - Penetration Tester 🕶️</h1>
-
-  <div class="section">
-    <h2>🛠️ Skills</h2>
-    <ul>
-      <li>✔️ Web Application Penetration Testing</li>
-      <li>✔️ Network Security & Exploitation</li>
-      <li>✔️ Bug Bounty Hunting</li>
-      <li>✔️ Reverse Engineering & Malware Analysis</li>
-      <li>✔️ OSINT (Open Source Intelligence)</li>
-      <li>✔️ Red Teaming & Social Engineering</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>📜 Work Samples</h2>
-    <ul>
-      <li>🔗 <a href="#">CTF Challenges & Writeups</a></li>
-      <li>🔗 <a href="#">Bug Bounty Reports</a></li>
-      <li>🔗 <a href="#">Security Research Articles</a></li>
-    </ul>
-  </div>
-
-  <button class="resume-button" onclick="downloadResume()">📥 Download My Resume</button>
+  <canvas id="matrixCanvas"></canvas>
+  <h1>Welcome, Hacker!</h1>
+  <p class="shloka">यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br>
+      अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥</p>
+  <p><strong>You have entered the hacker's den.</strong></p>
+  <p><strong>Access Granted...</strong></p>
+  <button class="cv-button" onclick="goToCV()">View My CV</button>
 
   <script>
-    function downloadResume() {
-      window.location.href = 'resume.pdf'; // Update with actual resume file link
+    function goToCV() {
+      window.location.href = "resume.html";
     }
+
+    var c = document.getElementById("matrixCanvas");
+    var ctx = c.getContext("2d");
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+
+    var letters = "01X0Y7L0XH4CK3R".split("");
+    var fontSize = 16;
+    var columns = c.width / fontSize;
+    var drops = [];
+    
+    for (var x = 0; x < columns; x++) {
+      drops[x] = 1;
+    }
+
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = "#0f0";
+      ctx.font = fontSize + "px Courier";
+      
+      for (var i = 0; i < drops.length; i++) {
+        var text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        
+        if (drops[i] * fontSize > c.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+    setInterval(drawMatrix, 50);
   </script>
 </body>
 </html>
