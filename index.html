@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -18,7 +19,7 @@
       text-align: center;
       flex-direction: column;
       padding: 20px;
-      display: none; /* Hide initially */
+      display: none; /* Initially hidden */
     }
 
     h1 {
@@ -70,7 +71,7 @@
     }
 
     /* Secret Code Popup */
-    .popup {
+    #secretPopup {
       position: fixed;
       top: 50%;
       left: 50%;
@@ -88,7 +89,7 @@
       animation: fadeIn 0.5s ease-in-out;
     }
 
-    .popup input {
+    #secretPopup input {
       font-size: 1.2em;
       padding: 10px;
       border: 2px solid #0f0;
@@ -99,7 +100,7 @@
       width: 80%;
     }
 
-    .popup button {
+    #secretPopup button {
       font-size: 1.2em;
       padding: 10px 20px;
       background: transparent;
@@ -110,7 +111,7 @@
       transition: all 0.3s ease-in-out;
     }
 
-    .popup button:hover {
+    #secretPopup button:hover {
       background: #00ff00;
       color: black;
       box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
@@ -124,7 +125,7 @@
 </head>
 <body id="mainContent">
 
-  <div id="secretPopup" class="popup">
+  <div id="secretPopup">
     <h2>Enter Secret Code</h2>
     <input type="text" id="secretCode" placeholder="Enter Code">
     <button onclick="checkCode()">Submit</button>
@@ -144,7 +145,7 @@
       var code = document.getElementById("secretCode").value;
       if (code === "0x7l") {
         document.getElementById("secretPopup").style.display = "none";
-        document.getElementById("pageContent").style.display = "flex";
+        document.getElementById("pageContent").style.display = "block";
         document.body.style.display = "flex";
       } else {
         alert("Access Denied! Wrong Secret Code.");
