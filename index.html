@@ -23,14 +23,15 @@
     h1 {
       font-size: 3.2em;
       text-transform: uppercase;
-      text-shadow: 0 0 20px #0f0, 0 0 40px #00ff00;
-      animation: glowGreen 1.5s infinite alternate;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
     }
 
     p {
       font-size: 1.2em;
       margin: 0.2em 0;
-      text-shadow: 0 0 5px #0f0;
+      color: #00ff00;
+      text-shadow: 0 0 5px #00ff00;
     }
 
     .shloka {
@@ -39,64 +40,34 @@
       color: red;
       font-weight: bold;
       margin-bottom: 1.5em;
-      text-shadow: 0 0 15px red, 0 0 30px #ff4d4d;
-      animation: glowRed 1.5s infinite alternate;
+      text-shadow: 0 0 10px red, 0 0 20px #ff4d4d;
       background: rgba(255, 0, 0, 0.1);
       padding: 10px;
       border-radius: 10px;
       display: inline-block;
     }
 
-    .alias {
-      font-family: "Orbitron", sans-serif;
-      font-size: 2em;
-      color: cyan;
-      margin-top: 20px;
-      text-shadow: 0 0 15px cyan, 0 0 30px #00ffff;
-      animation: hackerGlow 1.5s infinite alternate;
-      padding: 10px 20px;
-      border: 2px solid cyan;
-      border-radius: 8px;
-      display: inline-block;
-    }
-
     .cv-button {
-      font-size: 1.2em;
-      color: black;
-      background-color: #0f0;
-      border: 2px solid #0f0;
-      padding: 12px 25px;
-      margin-top: 25px;
-      cursor: pointer;
-      border-radius: 10px;
-      font-weight: bold;
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.5em;
+      color: cyan;
       text-transform: uppercase;
+      margin-top: 20px;
+      text-shadow: 0 0 10px cyan, 0 0 20px #00ffff;
+      padding: 15px 30px;
+      border: 2px solid cyan;
+      border-radius: 10px;
+      background: transparent;
+      cursor: pointer;
       transition: all 0.3s ease-in-out;
-      text-shadow: 0 0 10px black;
-      animation: glowGreen 1.5s infinite alternate;
-      box-shadow: 0 0 15px #0f0, 0 0 30px #00ff00;
     }
 
     .cv-button:hover {
-      background-color: #0c0;
+      background-color: rgba(0, 255, 255, 0.1);
       transform: scale(1.1);
-      box-shadow: 0 0 20px #0f0, 0 0 40px #00ff00;
+      box-shadow: 0 0 15px cyan, 0 0 30px #00ffff;
     }
 
-    @keyframes glowGreen {
-      from { text-shadow: 0 0 10px #0f0, 0 0 20px #0f0; }
-      to { text-shadow: 0 0 20px #0f0, 0 0 30px #00ff00; }
-    }
-
-    @keyframes glowRed {
-      from { text-shadow: 0 0 15px red, 0 0 30px #ff4d4d; }
-      to { text-shadow: 0 0 25px red, 0 0 40px #ff1a1a; }
-    }
-
-    @keyframes hackerGlow {
-      from { text-shadow: 0 0 15px cyan, 0 0 30px #00ffff; }
-      to { text-shadow: 0 0 25px cyan, 0 0 40px #00ffff; }
-    }
   </style>
 
   <script>
@@ -122,7 +93,6 @@
       अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥</p>
   <p>You have entered the hacker's den.</p>
   <p>Access Granted...</p>
-  <p class="alias">Alias: 0x7l</p>
   <button class="cv-button" onclick="goToCV()">View My CV</button>
 </body>
 </html>
