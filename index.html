@@ -122,14 +122,15 @@
     }
   </style>
 </head>
-<body>
+<body id="mainContent">
+
   <div id="secretPopup" class="popup">
     <h2>Enter Secret Code</h2>
     <input type="text" id="secretCode" placeholder="Enter Code">
     <button onclick="checkCode()">Submit</button>
   </div>
 
-  <div id="mainContent">
+  <div id="pageContent" style="display: none;">
     <h1>Welcome, Hacker!</h1>
     <p class="shloka">यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br>
         अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥</p>
@@ -139,13 +140,12 @@
   </div>
 
   <script>
-    document.getElementById("mainContent").style.display = "none";
-
     function checkCode() {
       var code = document.getElementById("secretCode").value;
       if (code === "0x7l") {
         document.getElementById("secretPopup").style.display = "none";
-        document.getElementById("mainContent").style.display = "flex";
+        document.getElementById("pageContent").style.display = "flex";
+        document.body.style.display = "flex";
       } else {
         alert("Access Denied! Wrong Secret Code.");
         document.getElementById("secretCode").value = "";
