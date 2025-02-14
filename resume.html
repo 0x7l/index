@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0x7l - Penetration Tester Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+    body {
+      background: #000;
+      color: #00ff00;
+      font-family: "Courier New", Courier, monospace;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    }
+
+    .section {
+      background: rgba(0, 255, 0, 0.1);
+      border: 1px solid #00ff00;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ff00;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .resume-button {
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.5em;
+      color: cyan;
+      text-transform: uppercase;
+      margin-top: 20px;
+      padding: 15px 30px;
+      border: 2px solid cyan;
+      border-radius: 10px;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .resume-button:hover {
+      background-color: rgba(0, 255, 255, 0.1);
+      transform: scale(1.1);
+      box-shadow: 0 0 15px cyan, 0 0 30px #00ffff;
+    }
+  </style>
+</head>
+<body>
+  <h1>👨‍💻 0x7l - Penetration Tester 🕶️</h1>
+
+  <div class="section">
+    <h2>🛠️ Skills</h2>
+    <ul>
+      <li>✔️ Web Application Penetration Testing</li>
+      <li>✔️ Network Security & Exploitation</li>
+      <li>✔️ Bug Bounty Hunting</li>
+      <li>✔️ Reverse Engineering & Malware Analysis</li>
+      <li>✔️ OSINT (Open Source Intelligence)</li>
+      <li>✔️ Red Teaming & Social Engineering</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>📜 Work Samples</h2>
+    <ul>
+      <li>🔗 <a href="#">CTF Challenges & Writeups</a></li>
+      <li>🔗 <a href="#">Bug Bounty Reports</a></li>
+      <li>🔗 <a href="#">Security Research Articles</a></li>
+    </ul>
+  </div>
+
+  <button class="resume-button" onclick="downloadResume()">📥 Download My Resume</button>
+
+  <script>
+    function downloadResume() {
+      window.location.href = 'resume.pdf'; // Update with actual resume file link
+    }
+  </script>
+</body>
+</html>
