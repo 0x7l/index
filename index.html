@@ -7,7 +7,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
     body {
-      background: radial-gradient(circle, #002200, #000000);
+      background: #000000; /* Pure Black Background */
       color: #0f0;
       font-family: "Courier New", Courier, monospace;
       display: flex;
@@ -18,6 +18,7 @@
       text-align: center;
       flex-direction: column;
       padding: 20px;
+      display: none; /* Hide initially */
     }
 
     h1 {
@@ -28,10 +29,10 @@
     }
 
     p {
-      font-size: 1.2em;
-      margin: 0.2em 0;
+      font-size: 1.4em;
+      margin: 10px 0;
       color: #00ff00;
-      text-shadow: 0 0 5px #00ff00;
+      text-shadow: 0 0 8px #00ff00;
     }
 
     .shloka {
@@ -68,31 +69,92 @@
       box-shadow: 0 0 15px cyan, 0 0 30px #00ffff;
     }
 
+    /* Secret Code Popup */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: black;
+      padding: 20px;
+      border: 2px solid #00ff00;
+      text-align: center;
+      z-index: 10;
+      box-shadow: 0 0 10px #00ff00, 0 0 30px #00ff00;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 1;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .popup input {
+      font-size: 1.2em;
+      padding: 10px;
+      border: 2px solid #0f0;
+      background: black;
+      color: #0f0;
+      text-align: center;
+      margin-top: 10px;
+      width: 80%;
+    }
+
+    .popup button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      background: transparent;
+      color: #00ff00;
+      border: 2px solid #00ff00;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .popup button:hover {
+      background: #00ff00;
+      color: black;
+      box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -60%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
   </style>
+</head>
+<body>
+  <div id="secretPopup" class="popup">
+    <h2>Enter Secret Code</h2>
+    <input type="text" id="secretCode" placeholder="Enter Code">
+    <button onclick="checkCode()">Submit</button>
+  </div>
+
+  <div id="mainContent">
+    <h1>Welcome, Hacker!</h1>
+    <p class="shloka">यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br>
+        अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥</p>
+    <p><strong>You have entered the hacker's den.</strong></p>
+    <p><strong>Access Granted...</strong></p>
+    <button class="cv-button" onclick="goToCV()">View My CV</button>
+  </div>
 
   <script>
-    window.onload = function() {
-      var secret = prompt("Enter the secret code to enter my world of hacking:", "0x7l");
-      
-      if (secret !== "0x7l") {
-        alert("Access Denied! You are not allowed to enter my world of hacking.");
-        document.body.innerHTML = "<h1>Access Denied</h1>";
+    document.getElementById("mainContent").style.display = "none";
+
+    function checkCode() {
+      var code = document.getElementById("secretCode").value;
+      if (code === "0x7l") {
+        document.getElementById("secretPopup").style.display = "none";
+        document.getElementById("mainContent").style.display = "flex";
       } else {
-        alert("Welcome to the world of hacking, 0x7l!");
+        alert("Access Denied! Wrong Secret Code.");
+        document.getElementById("secretCode").value = "";
       }
-    };
+    }
 
     function goToCV() {
       window.location.href = "resume.html"; // CV page ka link yaha dalna
     }
   </script>
-</head>
-<body>
-  <h1>Welcome, Hacker!</h1>
-  <p class="shloka">यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br>
-      अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥</p>
-  <p>You have entered the hacker's den.</p>
-  <p>Access Granted...</p>
-  <button class="cv-button" onclick="goToCV()">View My CV</button>
 </body>
 </html>
